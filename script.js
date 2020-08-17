@@ -15,13 +15,13 @@ setInterval(function(){
 const currentHour = parseInt(moment().format("H"));
 $(".time-block").each(function(){
     const hour = parseInt($(this).attr("id").replace("hour-", ""));
-    console.log(hour)
-    if (hour < currentHour) {
-        $(".time-block").addClass("past")
+    console.log(hour)//$(this) is the element we are targeting
+    if (hour < currentHour) {//a means to access elements within a class
+        $(this).addClass("past")
     }else if (currentHour === hour) {
-        $(".time-block").addClass("present")
+        $(this).addClass("present")
     } else{
-        $(".time-block").addClass("past")
+        $(this).addClass("future")
     }
 })
 
